@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todo">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title> ToDo list</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
+
+
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body ng-controller="MainController">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-lg-center">
+
+                <h1>to do list</h1>
+            </div>
+
+        </div>
+        <div class="row">
+            <form ng-submit="AddToDo(todo)">
+                <div class="col-md-6 col-md-offset-3 md-form">
+
+                    <input  ng-model="todo.text" type="text" id="writeToDo" class="form-control">
+    <label for="writeToDo" class="">write your todo here</label>
+
+
+
+
+                </div>
+                <div class="col-md-1 ">
+                    <input type="submit" value="add" class=" btn  btn-info" />
+
+                </div>
+            </form>
+        </div>
+
+        <!--Panel-->
+        <div class="card">
+            <div class="card-header success-color-dark white-text text-md-center">
+                total number of todo {{total}}
+            </div>
+            <div class="card-block">
+
+
+                <div class="row">
+
+                    <div ng-hide="toggle" class=" fadein col-md-2 todo" ng-repeat="todo in todos track by $index">
+                        <a ng-click="DeleteToDo($index);toggle=true" class="close-classic"></a>
+                        <p>{{todo}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--/.Panel-->
+
+    </div>
+
+
+    <!-- Start your project here-->
+
+    <!-- /Start your project here-->
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/MainController.js"></script>
+    <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+
+</body>
+
+</html>
